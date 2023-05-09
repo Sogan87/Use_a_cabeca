@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>House Finder</title>
+    <script type="text/javascript">
+
+        function validateNumber(value){
+            if (isNaN(value)) {
+                alert("Por favor, insira um número válido.");
+                return false;
+            }
+            return true;
+        }
+
+        function validateZipCode(value){
+            if (value.length !== 5 || isNaN(value)) {
+                alert("Por favor, insira um CEP válido com 5 dígitos.");
+                return false;
+            }
+            return true;
+        }
+
+        function calcPrice(){
+            var maxPrice = document.getElementById("income") . value * 4;
+            alert("Você pode comprar uma casa ate $" + maxPrice + ".")
+        }
+        function findHouse(form){
+            var bedrooms = document.getElementById("bedrooms") . value;
+            var zipCode = document.getElementById("zip") . value;
+        }
+
+        form.submit();
+
+    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id=""frame>
+        <div id="header">Pronto para localizar a casa nova?</div>
+        <div id="left">
+            <img src="./png-transparent-beige-house-with-manicured-lawn-house-home-apartment-house-building-apartment-room-thumbnail.png" alt="house"/>
+        </div>
+        <form name="ordemform" action="..." method="POST">
+            <div class="fi eld">Entre a renda anual:
+                <input id="income" type="text" size="12"
+                onblur="validateNumber(this.value)"/></div>
+            
+            <div class="fi eld">Entre o numero de quartos:
+                <input id="bedrooms" type="text" size="6"
+                onblur="validateNumber(this.value)"/></div>
+
+            <div class="fi eld">Entre o CEP:
+                <input id="zip" type="text" size="10"
+                onblur="validateNumber(this.value)"/></div>
+            
+            <input type="button" value="Calcula o preço"
+                onclick="calcPrice();"/>
+            
+            <input type="button" value="Localiza a casa"
+                onclick="findHouse(this.form);"/>
+        </form>
+    </div>
+    
+</body>
+</html>
